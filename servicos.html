@@ -9,18 +9,20 @@
   <!-- Fontes: Saira Condensed (display) + Hanken Grotesk (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anta&family=Saira+Condensed:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/services.css" />
 </head>
 <body>
+
+  <!-- Fundo animado: dupla hélice de DNA (rotação controlada pelo scroll) -->
+  <canvas id="dna-bg" aria-hidden="true"></canvas>
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container">
       <nav class="nav">
         <a class="brand" href="index.html">
-          <span class="mark"><span>AE</span></span>
           AUTO <b>EVOLUTION</b>
         </a>
 
@@ -146,6 +148,7 @@
     </div>
   </footer>
 
+  <script src="js/dna-bg.js"></script>
   <script src="js/services-data.js"></script>
   <script src="js/services.js"></script>
 </body>

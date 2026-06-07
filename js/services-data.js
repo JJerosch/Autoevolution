@@ -124,14 +124,26 @@ window.SERVICES_DATA = {
     },
     {
       "id": "peliculas",
-      "name": "Películas & Vidros",
+      "name": "Películas & Insulfilm",
       "icon": "shield",
-      "description": "Linha completa de películas além do ZV90, para conforto térmico e proteção dos vidros.",
+      "description": "Linha completa de películas além do ZV90, para conforto térmico e proteção solar.",
       "items": [
         "Película nano cerâmica e carbon",
         "Insulfilm cerâmico híbrido",
         "Película de proteção anti-trinco",
         "Bloqueio de calor e UV com instalação amigável"
+      ]
+    },
+    {
+      "id": "vidros",
+      "name": "Vidros & Para-brisa",
+      "icon": "glass",
+      "description": "Tratamento, restauração e proteção dos vidros para mais visibilidade e segurança ao dirigir.",
+      "items": [
+        "Restauração e polimento de para-brisa",
+        "Cristalização e repelente de chuva nos vidros",
+        "Remoção de riscos e manchas do vidro",
+        "Reparo de pequenas trincas e impactos"
       ]
     },
     {
@@ -159,4 +171,5 @@ window.SERVICES_DATA = {
       ]
     }
   ]
-};
+}
+;
