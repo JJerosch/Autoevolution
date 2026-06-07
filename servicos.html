@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços · Auto Evolution — Estética Automotiva Premium em Curitiba</title>
+  <meta name="description" content="PPF, insulfilm cerâmico, vitrificação, blindagem, performance e estética automotiva premium em Curitiba. Conheça os serviços da Auto Evolution." />
+
+  <!-- Fontes: Saira Condensed (display) + Hanken Grotesk (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/services.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="mark"><span>AE</span></span>
+          AUTO <b>EVOLUTION</b>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html" class="active">Serviços</a></li>
+          <li class="dropdown">
+            <a class="drop-toggle" href="#groups">Categorias <i class="chev"></i></a>
+            <div class="drop-menu" id="drop-menu">
+              <!-- preenchido via JS a partir do JSON -->
+            </div>
+          </li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <a class="btn btn-primary" href="contato.html">Pedir orçamento</a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span class="sep">/</span>
+        <span class="here">Serviços</span>
+      </nav>
+      <span class="eyebrow">Estética automotiva premium · Curitiba</span>
+      <h1>Cada detalhe<br>no <span class="stroke">padrão</span> de fábrica</h1>
+      <p>
+        Do PPF à blindagem, tratamos seu veículo com tecnologia de ponta e acabamento
+        impecável. Conheça abaixo nossos serviços mais procurados e a linha completa
+        de proteção, estética e performance.
+      </p>
+      <div class="hero-meta">
+        <div class="stat"><div class="num">10 anos</div><div class="label">de garantia ZV90</div></div>
+        <div class="stat"><div class="num">III-A</div><div class="label">blindagem homologada</div></div>
+        <div class="stat"><div class="num">ISO 9001</div><div class="label">certificação</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOP 3 ===================== -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Mais procurados</span>
+        <h2>Serviços em <span class="accent">destaque</span></h2>
+        <p>Os três trabalhos que mais transformam — e protegem — os veículos dos nossos clientes.</p>
+      </div>
+      <div class="featured-grid" id="featured-grid">
+        <!-- cards inseridos via JS (async) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEMAIS SERVIÇOS ===================== -->
+  <section class="groups" id="groups">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Linha completa</span>
+        <h2>Todos os <span class="accent">serviços</span></h2>
+        <p>Estética, couro, faróis, pintura, rodas, performance, blindagem e cuidados especiais.</p>
+      </div>
+      <div class="groups-grid" id="groups-grid">
+        <!-- cards inseridos via JS (async) -->
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-band">
+        <div class="cta-inner">
+          <div>
+            <h2>Não achou o que procura?</h2>
+            <p>Cada projeto é único. Fale com a gente e monte um orçamento sob medida.</p>
+          </div>
+          <a class="btn btn-dark" href="https://wa.me/5541996459928?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="fcol" style="max-width:300px">
+          <h4>Auto Evolution</h4>
+          <p>Estética automotiva premium. Proteção, estética e performance com acabamento padrão de fábrica.</p>
+        </div>
+        <div class="fcol">
+          <h4>Contato</h4>
+          <p>
+            <a href="https://wa.me/5541996459928" target="_blank" rel="noopener">(41) 99645-9928</a><br>
+            R. Lamenha Lins, 2486<br>
+            Curitiba — PR
+          </p>
+        </div>
+        <div class="fcol">
+          <h4>Horário</h4>
+          <p>Seg a Sex · 9h às 18h<br>Sábado sob agendamento</p>
+        </div>
+        <div class="fcol">
+          <h4>Redes</h4>
+          <p>
+            <a href="https://instagram.com/autoevolutionbrazil" target="_blank" rel="noopener">@autoevolutionbrazil</a><br>
+            autoevolutionbrazil.com.br
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Auto Evolution. Todos os direitos reservados.</span>
+        <span>Curitiba · Paraná · Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/services-data.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

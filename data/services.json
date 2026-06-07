@@ -1,0 +1,158 @@
+{
+  "featured": [
+    {
+      "id": "ppf",
+      "number": "01",
+      "name": "PPF — Proteção de Pintura",
+      "tagline": "Película transparente de alta tecnologia",
+      "description": "Filme transparente premium que blinda a pintura contra riscos, pedras, insetos, raios UV e manchas químicas, acompanhando as curvas do veículo sem alterar o design.",
+      "highlights": [
+        "Autorreparo térmico (arranhões somem com o calor)",
+        "Versão reGen com regeneração instantânea, 100% TPU",
+        "193 mícrons de espessura e acabamento fosco, brilhante ou transparente",
+        "Durabilidade de 4 a 10 anos e garantia contra amarelamento"
+      ]
+    },
+    {
+      "id": "insulfilm-ceramico",
+      "number": "02",
+      "name": "Insulfilm Cerâmico ZIVENT ZV90",
+      "tagline": "Tecnologia cerâmica híbrida patenteada",
+      "description": "A película óptica mais tecnológica da ZIVENT: poliéster de ultra definição revestido por cerâmica híbrida que rejeita calor de forma agressiva sem comprometer a visibilidade.",
+      "highlights": [
+        "Até 71,7% de rejeição solar total (TSER) e 96,7% de infravermelho",
+        "Bloqueio de 99,9% dos raios UVA e UVB",
+        "Transparência óptica em ultra definição, sem moiré ou arco-íris",
+        "Garantia de 10 anos, única no mercado"
+      ]
+    },
+    {
+      "id": "vitrificacao",
+      "number": "03",
+      "name": "Vitrificação & Revestimento Cerâmico",
+      "tagline": "Proteção nano cerâmica de longa duração",
+      "description": "Revestimento nano cerâmico (linha Carpro) que forma uma camada protetora sobre a pintura, garantindo brilho profundo, repelência e facilidade de limpeza por anos.",
+      "highlights": [
+        "Brilho intenso e duradouro com efeito hidrofóbico",
+        "Protege pintura, plásticos e couro contra danos",
+        "Reduz custos de manutenção e valoriza o veículo",
+        "Proteção configurável de 3 meses a 7 anos"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "estetica",
+      "name": "Estética e Detalhamento",
+      "icon": "sparkle",
+      "description": "Lavagens técnicas, polimento e higienização que devolvem ao veículo o aspecto de zero quilômetro.",
+      "items": [
+        "Polimento técnico com descontaminação clay-bar",
+        "Lavagens especiais (nano-reativa, ferrosa e química)",
+        "Higienização interna com oxisanitização por ozônio",
+        "Lavagem de motor detalhada",
+        "Acabamento espelhado e enceramento",
+        "Preparação pré-venda (show room)"
+      ]
+    },
+    {
+      "id": "couro",
+      "name": "Cuidados com o Couro",
+      "icon": "seat",
+      "description": "Restauração, pintura e proteção de couro com tecnologia europeia e ajuste de cor em laboratório.",
+      "items": [
+        "Restauração do couro do volante (made in Europe)",
+        "Substituição de couro do volante",
+        "Pintura de couro dos assentos com ajuste de cor",
+        "Hidratação com fragrância couro novo",
+        "Vitrificação nano-cerâmica do couro",
+        "Impermeabilização de bancos (tecido ou couro)"
+      ]
+    },
+    {
+      "id": "farois",
+      "name": "Faróis e Iluminação",
+      "icon": "headlight",
+      "description": "Restauração, troca de lentes e customização de iluminação no padrão de fábrica e além.",
+      "items": [
+        "Restauração de faróis e troca de lentes (todas as marcas)",
+        "DRL: substituição, instalação e reprogramação",
+        "Mini-projetor 24.000 lumens e angel eyes",
+        "Projetores laser e customizações de iluminação",
+        "Lanternas originais e recuperação interna de projetores"
+      ]
+    },
+    {
+      "id": "pintura",
+      "name": "Pintura Automotiva",
+      "icon": "spray",
+      "description": "Pintura padrão de fábrica com ajuste de cor em laboratório, inclusive cores exóticas.",
+      "items": [
+        "Pintura padrão de fábrica com ajuste de cor",
+        "Cores exóticas e exclusivas",
+        "Retoque rápido em 24h",
+        "Restauração de verniz",
+        "Martelinho de ouro"
+      ]
+    },
+    {
+      "id": "rodas",
+      "name": "Rodas",
+      "icon": "wheel",
+      "description": "Pintura, diamantagem e reforma completa de rodas com geometria garantida.",
+      "items": [
+        "Pintura e diamantagem de rodas",
+        "Reforma estrutural e estética",
+        "Alinhamento e balanceamento inclusos"
+      ]
+    },
+    {
+      "id": "performance",
+      "name": "Performance",
+      "icon": "gauge",
+      "description": "Reprogramação eletrônica para mais potência, resposta e eficiência do motor.",
+      "items": [
+        "Remap Stage 1 a 4",
+        "Piggyback e pedal chip",
+        "Eliminação do delay do acelerador",
+        "Escapamento downpipe"
+      ]
+    },
+    {
+      "id": "peliculas",
+      "name": "Películas & Vidros",
+      "icon": "shield",
+      "description": "Linha completa de películas além do ZV90, para conforto térmico e proteção dos vidros.",
+      "items": [
+        "Película nano cerâmica e carbon",
+        "Insulfilm cerâmico híbrido",
+        "Película de proteção anti-trinco",
+        "Bloqueio de calor e UV com instalação amigável"
+      ]
+    },
+    {
+      "id": "blindagem",
+      "name": "Blindagem",
+      "icon": "lock",
+      "description": "Blindagem homologada pelo Exército Brasileiro com os mais altos padrões de segurança.",
+      "items": [
+        "Blindagem Nível III-A",
+        "Homologação pelo Exército Brasileiro",
+        "Certificação ISO 9001",
+        "Associada à Abralim"
+      ]
+    },
+    {
+      "id": "especiais",
+      "name": "Serviços Especiais",
+      "icon": "star",
+      "description": "Trabalhos delicados e sob medida para raridades, elétricos e projetos de customização.",
+      "items": [
+        "Veículos de coleção e raridades",
+        "Reparo de carregador automotivo (BYD e elétricos)",
+        "Customizações sob medida (snorkel, projetos completos)",
+        "Kit prevenção PPF em pontos estratégicos"
+      ]
+    }
+  ]
+}
