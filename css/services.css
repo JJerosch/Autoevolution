@@ -502,6 +502,109 @@ img { max-width: 100%; display: block; }
 .grp-items li:first-child { border-top: none; }
 .grp-items li .tick { color: var(--orange); flex: none; font-weight: 700; }
 
+/* CTA "Ver serviço" nos cards da listagem */
+.fc-cta.grp-cta { margin-top: 22px; }
+
+/* ============================================================
+   PÁGINA INDIVIDUAL DE SERVIÇO (servico.html)
+   ============================================================ */
+.service-detail { max-width: 860px; }
+
+.service-detail .breadcrumb { margin-bottom: 26px; }
+
+.detail-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.detail-icon {
+  flex: none;
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  display: grid; place-items: center;
+  background: rgba(255,99,0,0.1);
+  border: 1px solid rgba(255,99,0,0.25);
+}
+.detail-icon svg { width: 32px; height: 32px; stroke: var(--orange); }
+.detail-head .eyebrow { display: block; margin-bottom: 8px; }
+.detail-head h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+
+.detail-lead {
+  color: var(--grey);
+  font-size: 1.12rem;
+  max-width: 60ch;
+  margin-bottom: 12px;
+}
+
+/* mini-seções: Serviços e Características */
+.detail-section {
+  margin-top: 38px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-soft);
+}
+.detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+.detail-section-title::before {
+  content: "";
+  width: 4px;
+  height: 1.1em;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* lista de highlights (serviços em destaque) */
+.detail-highlights { margin: 24px 0 32px; }
+
+/* lista de itens/peças com botão por linha (categorias) */
+.detail-items {
+  margin: 28px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-soft);
+  flex-wrap: wrap;
+}
+.detail-item:first-child { border-top: none; }
+.detail-item .tick { color: var(--orange); flex: none; font-weight: 700; }
+.detail-item .di-text {
+  flex: 1 1 240px;
+  font-size: 1rem;
+  color: var(--white);
+}
+.detail-item .di-btn { flex: none; }
+
+.detail-cta { margin-top: 30px; }
+
+@media (max-width: 560px) {
+  .detail-head { gap: 16px; }
+  .detail-icon { width: 52px; height: 52px; }
+  .detail-icon svg { width: 26px; height: 26px; }
+  .detail-item .di-btn { width: 100%; justify-content: center; }
+}
+
 /* ============================================================
    CTA BAND
    ============================================================ */

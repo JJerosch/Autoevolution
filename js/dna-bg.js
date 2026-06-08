@@ -150,7 +150,7 @@
         cancelAnimationFrame(animationFrameId);
         animationFrameId = null;
       }
-      draw();
+      loop();
     }
   }
 

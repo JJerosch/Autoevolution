@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serviços · Auto Evolution — Estética Automotiva Premium em Curitiba</title>
-  <meta name="description" content="PPF, insulfilm cerâmico, vitrificação, blindagem, performance e estética automotiva premium em Curitiba. Conheça os serviços da Auto Evolution." />
+  <title>Serviço · Auto Evolution — Estética Automotiva Premium em Curitiba</title>
+  <meta name="description" content="Detalhes do serviço de estética automotiva premium da Auto Evolution em Curitiba. Solicite informações pelo WhatsApp." />
 
   <!-- Fontes: Saira Condensed (display) + Hanken Grotesk (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,12 +29,7 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Início</a></li>
           <li><a href="servicos.html" class="active">Serviços</a></li>
-          <li class="dropdown">
-            <a class="drop-toggle" href="#groups">Categorias <i class="chev"></i></a>
-            <div class="drop-menu" id="drop-menu">
-              <!-- preenchido via JS a partir do JSON -->
-            </div>
-          </li>
+          <li><a href="servicos.html#groups">Categorias</a></li>
           <li><a href="portfolio.html">Portfólio</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
@@ -48,61 +43,26 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== DETALHE DO SERVIÇO ===================== -->
   <section class="hero">
     <div class="container">
-      <nav class="breadcrumb">
-        <a href="index.html">Início</a>
-        <span class="sep">/</span>
-        <span class="here">Serviços</span>
-      </nav>
-      <span class="eyebrow">Estética automotiva premium · Curitiba</span>
-      <h1>Cada detalhe<br>no <span class="stroke">padrão</span> de fábrica</h1>
-      <p>
-        Do PPF à blindagem, tratamos seu veículo com tecnologia de ponta e acabamento
-        impecável. Conheça abaixo nossos serviços mais procurados e a linha completa
-        de proteção, estética e performance.
-      </p>
-      <div class="hero-meta">
-        <div class="stat"><div class="num">10 anos</div><div class="label">de garantia ZV90</div></div>
-        <div class="stat"><div class="num">III-A</div><div class="label">blindagem homologada</div></div>
-        <div class="stat"><div class="num">ISO 9001</div><div class="label">certificação</div></div>
-      </div>
+      <main class="service-detail" id="service-detail">
+        <!-- conteúdo inserido via JS a partir de ?id= -->
+        <div class="load-error" style="border:none">
+          <b>Carregando serviço…</b>
+        </div>
+      </main>
     </div>
   </section>
 
-  <!-- ===================== TOP 3 ===================== -->
-  <section class="featured" id="featured">
+  <!-- ===================== CTA ===================== -->
+  <section class="groups">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Mais procurados</span>
-        <h2>Serviços em <span class="accent">destaque</span></h2>
-        <p>Os três trabalhos que mais transformam — e protegem — os veículos dos nossos clientes.</p>
-      </div>
-      <div class="featured-grid" id="featured-grid">
-        <!-- cards inseridos via JS (async) -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== DEMAIS SERVIÇOS ===================== -->
-  <section class="groups" id="groups">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Linha completa</span>
-        <h2>Todos os <span class="accent">serviços</span></h2>
-        <p>Estética, couro, faróis, pintura, rodas, performance, blindagem e cuidados especiais.</p>
-      </div>
-      <div class="groups-grid" id="groups-grid">
-        <!-- cards inseridos via JS (async) -->
-      </div>
-
-      <!-- CTA -->
       <div class="cta-band">
         <div class="cta-inner">
           <div>
-            <h2>Não achou o que procura?</h2>
-            <p>Cada projeto é único. Fale com a gente e monte um orçamento sob medida.</p>
+            <h2>Ainda com dúvidas?</h2>
+            <p>Fale direto com a gente no WhatsApp e monte um orçamento sob medida.</p>
           </div>
           <a class="btn btn-dark" href="https://wa.me/5541996459928?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
             Falar no WhatsApp
@@ -151,6 +111,6 @@
   <script src="js/dna-bg.js"></script>
   <script src="js/services-data.js"></script>
   <script src="js/common.js"></script>
-  <script src="js/services.js"></script>
+  <script src="js/servico.js"></script>
 </body>
 </html>
