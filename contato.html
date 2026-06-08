@@ -171,11 +171,14 @@
               <textarea id="f-msg" name="mensagem" placeholder="Conte um pouco sobre o que você procura..." required></textarea>
             </div>
 
+            <!-- Honeypot anti-spam (Web3Forms ignora envios com esse campo preenchido) -->
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
             <div class="form-msg" id="form-msg"></div>
 
             <div class="form-actions">
               <span class="hint">Responderemos em até 1 dia útil.</span>
-              <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+              <button class="btn btn-primary" type="submit" id="submit-btn">Enviar mensagem</button>
             </div>
           </form>
         </div>
@@ -232,16 +235,27 @@
         });
       }
 
-      /* Formulário — validação + envio via e-mail (mailto) */
-      const form = document.getElementById("contact-form");
-      const msg = document.getElementById("form-msg");
+      /* ============================================================
+         Formulário — envio via Web3Forms (e-mail real)
+         Gere sua chave em https://web3forms.com/#start (digite
+         jpjerosch@gmail.com, confirme e cole a chave abaixo).
+         ============================================================ */
+      const ACCESS_KEY = "77608a65-65ad-4753-b14d-c94d34aaa4d0";
       const DESTINO = "jpjerosch@gmail.com";
 
-      form.addEventListener("submit", (e) => {
+      const form    = document.getElementById("contact-form");
+      const msg     = document.getElementById("form-msg");
+      const submit  = document.getElementById("submit-btn");
+
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
         msg.classList.remove("show", "ok", "err");
 
         const data = Object.fromEntries(new FormData(form).entries());
+
+        // honeypot: se vier preenchido, é bot — aborta silenciosamente
+        if (data.botcheck) return;
+
         const missing = ["nome", "telefone", "email", "servico", "mensagem"].filter((k) => !data[k]);
         if (missing.length) {
           msg.textContent = "Preencha os campos obrigatórios antes de enviar.";
@@ -254,29 +268,77 @@
           return;
         }
 
+        if (!ACCESS_KEY || ACCESS_KEY.startsWith("COLE_AQUI")) {
+          msg.innerHTML = "Configuração pendente: cole a <b>access_key</b> do Web3Forms no arquivo contato.html.";
+          msg.classList.add("show", "err");
+          return;
+        }
+
+        // monta o corpo da mensagem
         const linhas = [
-          "Olá! Recebi uma nova solicitação pelo site da Auto Evolution.",
+          "Nova solicitação recebida pelo site da Auto Evolution.",
           "",
           "Nome: " + data.nome,
           "Telefone: " + data.telefone,
           "E-mail: " + data.email,
           data.veiculo ? "Veículo: " + data.veiculo : null,
-          "Serviço: " + data.servico,
+          "Serviço de interesse: " + data.servico,
           "",
           "Mensagem:",
           data.mensagem,
         ].filter(Boolean);
 
-        const subject = "Solicitação de orçamento — " + data.nome + " (" + data.servico + ")";
-        const url = "mailto:" + DESTINO +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(linhas.join("\n"));
+        const payload = {
+          access_key: ACCESS_KEY,
+          from_name:  "Auto Evolution — Site",
+          subject:    "Solicitação de orçamento — " + data.nome + " (" + data.servico + ")",
+          // campos individuais para exibir no e-mail
+          nome:       data.nome,
+          telefone:   data.telefone,
+          email:      data.email,
+          veiculo:    data.veiculo || "—",
+          servico:    data.servico,
+          mensagem:   data.mensagem,
+          // corpo bonito
+          message:    linhas.join("\n"),
+          // reply-to: respondendo o e-mail vai para o cliente
+          replyto:    data.email,
+        };
 
-        window.location.href = url;
+        // estado de loading
+        const labelOriginal = submit.textContent;
+        submit.disabled = true;
+        submit.textContent = "Enviando…";
+        msg.classList.remove("show", "ok", "err");
 
-        msg.innerHTML = "Mensagem pronta! Abrimos seu cliente de e-mail com a solicitação para <b>" + DESTINO + "</b> — é só revisar e enviar.";
-        msg.classList.add("show", "ok");
-        form.reset();
+        try {
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          const json = await res.json();
+
+          if (json.success) {
+            msg.innerHTML = "Mensagem enviada com sucesso para <b>" + DESTINO + "</b>! Responderemos em até 1 dia útil.";
+            msg.classList.add("show", "ok");
+            form.reset();
+          } else {
+            console.error("Web3Forms:", json);
+            msg.textContent = "Não foi possível enviar agora (" + (json.message || "erro desconhecido") + "). Tente pelo WhatsApp.";
+            msg.classList.add("show", "err");
+          }
+        } catch (err) {
+          console.error(err);
+          msg.textContent = "Falha de conexão ao enviar. Verifique sua internet e tente novamente.";
+          msg.classList.add("show", "err");
+        } finally {
+          submit.disabled = false;
+          submit.textContent = labelOriginal;
+        }
       });
 
       /* Reveal */
