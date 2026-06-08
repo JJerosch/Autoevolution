@@ -44,7 +44,12 @@
     boost = Math.min(MAX_BOOST, boost + Math.abs(d) * 0.0006);
   }, { passive: true });
 
-  window.addEventListener("resize", resize);
+  let animationFrameId = null;
+
+  window.addEventListener("resize", () => {
+    resize();
+    checkAndStartAnimation();
+  });
 
   function rgba(a) {
     return `rgba(${ORANGE[0]},${ORANGE[1]},${ORANGE[2]},${a})`;
@@ -125,16 +130,30 @@
     boost *= DECAY;
     rotation += (IDLE + boost) * dir;
     draw();
-    requestAnimationFrame(loop);
+    animationFrameId = requestAnimationFrame(loop);
+  }
+
+  function checkAndStartAnimation() {
+    // Verifica se deve rodar baseado na proporção
+    const is1920x1080 = window.innerWidth === 1920 && window.innerHeight === 1080;
+    const aspectRatio = window.innerWidth / window.innerHeight;
+    const is16to9 = Math.abs(aspectRatio - 16/9) < 0.01; // tolerância de 0.01
+    
+    if (is1920x1080 || is16to9) {
+      // Se ainda não está rodando, começa
+      if (!animationFrameId) {
+        loop();
+      }
+    } else {
+      // Se está rodando, para e desenha estático
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+      draw();
+    }
   }
 
   resize();
-
-  const reduced = window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduced) {
-    draw(); // estático para quem prefere menos movimento
-  } else {
-    loop();
-  }
+  checkAndStartAnimation();
 })();

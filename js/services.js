@@ -154,4 +154,70 @@ function initMobileNav() {
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   loadServices();
+  initCategoryScroll();
 });
+
+/* -------- animação de scroll para categorias (apenas 16:9) -------- */
+
+function initCategoryScroll() {
+  const dropMenu = document.getElementById("drop-menu");
+  if (!dropMenu) return;
+
+  // Verifica se a resolução é 16:9
+  function is16to9() {
+    const aspectRatio = window.innerWidth / window.innerHeight;
+    return Math.abs(aspectRatio - 16/9) < 0.01;
+  }
+
+  // Intercepta cliques nos links de categoria
+  dropMenu.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
+
+    // Se NÃO for 16:9, deixa o comportamento padrão
+    if (!is16to9()) return;
+
+    e.preventDefault();
+
+    const targetId = href.substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    // Animação suave até a categoria
+    animateScrollToElement(target);
+
+    // Fecha o menu mobile
+    const navLinks = document.getElementById("nav-links");
+    if (navLinks) navLinks.classList.remove("open");
+  });
+}
+
+function animateScrollToElement(element) {
+  const targetPos = element.offsetTop - 100; // offset para deixar espaço no topo
+  const startPos = window.scrollY || window.pageYOffset || 0;
+  const distance = targetPos - startPos;
+  const duration = 800; // ms
+  let startTime = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  }
+
+  function scroll(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeProgress = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPos + distance * easeProgress);
+
+    if (progress < 1) {
+      requestAnimationFrame(scroll);
+    }
+  }
+
+  requestAnimationFrame(scroll);
+}
