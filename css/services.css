@@ -5,12 +5,14 @@
    ============================================================ */
 
 :root {
-  --bg:           #0d0d0f;
-  --bg-2:         #131316;
-  --surface:      #18181c;
-  --surface-2:    #1f1f24;
-  --border:       #2a2a30;
-  --border-soft:  #232329;
+  --bg: #050913;
+  --bg-2: #0A1222;
+
+  --surface: #0F1A2D;
+  --surface-2: #16243B;
+
+  --border: #24364E;
+  --border-soft: #1A2940;
 
   --orange:       #ff6300;
   --orange-bright:#ff8534;
