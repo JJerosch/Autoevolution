@@ -513,7 +513,9 @@ img { max-width: 100%; display: block; }
   right: -80px; top: -80px;
   width: 320px; height: 320px;
   background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 60%);
+  pointer-events: none;
 }
+.cta-inner > * { position: relative; z-index: 1; }
 .cta-inner h2 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -1093,4 +1095,300 @@ img { max-width: 100%; display: block; }
   .contact-info, .contact-form-wrap { padding: 28px 22px; }
   .ab-stat { padding: 22px 20px; }
   .about-stats { gap: 14px; }
+}
+
+/* ============================================================
+   HOME — HISTÓRIA, LEMA, MARCAS, AUDIENCE
+   ============================================================ */
+
+.history,
+.lemma-wrap,
+.brands,
+.audience { position: relative; z-index: 1; }
+
+/* -------- HISTÓRIA -------- */
+.history { padding: 70px 0 50px; }
+.history-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 50px;
+  align-items: start;
+}
+.history-text h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 14px 0 22px;
+}
+.history-text h2 .accent { color: var(--orange); }
+.history-text p {
+  color: var(--grey);
+  font-size: 1.02rem;
+  margin-bottom: 14px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--orange) 0%, rgba(255,99,0,0.15) 100%);
+}
+.tl-item {
+  position: relative;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  transition: border-color 0.3s, transform 0.3s var(--ease);
+}
+.tl-item:hover {
+  border-color: rgba(255,99,0,0.35);
+  transform: translateX(4px);
+}
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -28px; top: 22px;
+  width: 16px; height: 16px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg), 0 0 20px rgba(255,99,0,0.55);
+}
+.tl-year {
+  font-family: var(--font-display);
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.tl-item h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 6px 0 8px;
+  letter-spacing: 0.01em;
+}
+.tl-item p {
+  font-size: 0.94rem;
+  color: var(--grey);
+  margin: 0;
+}
+
+/* -------- LEMA -------- */
+.lemma-wrap { padding: 30px 0 50px; }
+.lemma-band {
+  position: relative;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  overflow: hidden;
+}
+.lemma-band::before {
+  content: "\201C";
+  position: absolute;
+  top: -60px; left: 30px;
+  font-family: var(--font-display);
+  font-size: 18rem;
+  color: var(--orange);
+  opacity: 0.16;
+  line-height: 1;
+}
+.lemma-band::after {
+  content: "";
+  position: absolute;
+  right: -120px; bottom: -120px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, var(--orange-glow), transparent 60%);
+  pointer-events: none;
+}
+.lemma-quote {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  line-height: 1.18;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  max-width: 24ch;
+  margin: 0 auto;
+}
+.lemma-quote .accent { color: var(--orange); }
+.lemma-sub {
+  position: relative;
+  margin-top: 26px;
+  color: var(--grey);
+  font-size: 1.02rem;
+  max-width: 54ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------- MARCAS / CERTIFICAÇÃO -------- */
+.brands { padding: 30px 0 60px; }
+.cert-banner {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 32px;
+  background: linear-gradient(110deg, rgba(255,99,0,0.10) 0%, transparent 75%);
+  border: 1px solid rgba(255,99,0,0.32);
+  border-radius: var(--radius-lg);
+  margin-bottom: 36px;
+}
+.cert-icon {
+  flex: none;
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: var(--orange);
+  color: #140a00;
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+}
+.cert-text { flex: 1; }
+.cert-text .lab {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.cert-text .val {
+  font-size: 1.04rem;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.brand-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 24px 22px 26px;
+  transition: border-color 0.3s, transform 0.3s var(--ease), background 0.3s;
+}
+.brand-card:hover {
+  border-color: rgba(255,99,0,0.4);
+  background: var(--surface-2);
+  transform: translateY(-4px);
+}
+.brand-card .brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.brand-card .brand-origin {
+  font-size: 0.72rem;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  margin: 6px 0 12px;
+}
+.brand-card .brand-desc {
+  color: var(--grey);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* -------- PARA QUEM ATENDEMOS -------- */
+.audience { padding: 50px 0 50px; }
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.aud-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: border-color 0.3s, transform 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.aud-card.highlight {
+  background: linear-gradient(160deg, rgba(255,99,0,0.10) 0%, var(--surface) 80%);
+  border-color: rgba(255,99,0,0.35);
+}
+.aud-card.highlight::after {
+  content: "";
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, var(--orange-glow), transparent 60%);
+  pointer-events: none;
+}
+.aud-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,99,0,0.45);
+}
+.aud-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(255,99,0,0.1);
+  border: 1px solid rgba(255,99,0,0.25);
+  display: grid; place-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.aud-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.8; }
+.aud-card h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+.aud-card p {
+  color: var(--grey);
+  font-size: 0.92rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* -------- RESPONSIVO (seções novas) -------- */
+@media (max-width: 940px) {
+  .history-grid { grid-template-columns: 1fr; gap: 36px; }
+  .brands-grid { grid-template-columns: repeat(2, 1fr); }
+  .audience-grid { grid-template-columns: repeat(2, 1fr); }
+  .cert-banner { flex-direction: column; align-items: flex-start; }
+  .lemma-band { padding: 60px 32px; }
+  .lemma-band::before { font-size: 12rem; top: -40px; left: 20px; }
+}
+@media (max-width: 560px) {
+  .brands-grid { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .tl-item { padding: 16px 18px; }
+  .lemma-band { padding: 50px 24px; }
+  .lemma-band::before { font-size: 9rem; top: -28px; left: 10px; }
 }

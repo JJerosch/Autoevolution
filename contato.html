@@ -52,7 +52,7 @@
       <h1>Fale com a<br><span class="stroke">Auto Evolution</span></h1>
       <p>
         Conte sobre o seu veículo e o serviço que tem em mente. Respondemos rápido pelo
-        WhatsApp ou pelo formulário abaixo, com orçamento sem compromisso.
+        WhatsApp, e-mail ou pelo formulário abaixo, com orçamento sem compromisso.
       </p>
     </div>
   </section>
@@ -232,10 +232,10 @@
         });
       }
 
-      /* Formulário — validação + envio via WhatsApp */
+      /* Formulário — validação + envio via e-mail (mailto) */
       const form = document.getElementById("contact-form");
       const msg = document.getElementById("form-msg");
-      const WA = "5541996459928";
+      const DESTINO = "jpjerosch@gmail.com";
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -255,7 +255,7 @@
         }
 
         const linhas = [
-          "Olá! Vim pelo site da Auto Evolution.",
+          "Olá! Recebi uma nova solicitação pelo site da Auto Evolution.",
           "",
           "Nome: " + data.nome,
           "Telefone: " + data.telefone,
@@ -267,10 +267,14 @@
           data.mensagem,
         ].filter(Boolean);
 
-        const url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(linhas.join("\n"));
-        window.open(url, "_blank", "noopener");
+        const subject = "Solicitação de orçamento — " + data.nome + " (" + data.servico + ")";
+        const url = "mailto:" + DESTINO +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(linhas.join("\n"));
 
-        msg.textContent = "Mensagem pronta! Abrimos o WhatsApp em uma nova aba — é só enviar.";
+        window.location.href = url;
+
+        msg.innerHTML = "Mensagem pronta! Abrimos seu cliente de e-mail com a solicitação para <b>" + DESTINO + "</b> — é só revisar e enviar.";
         msg.classList.add("show", "ok");
         form.reset();
       });
