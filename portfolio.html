@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio · Auto Evolution — Estética Automotiva Premium</title>
-  <meta name="description" content="Veja projetos reais da Auto Evolution em PPF, insulfilm cerâmico, vitrificação, blindagem e estética automotiva premium em Curitiba." />
+  <meta name="description" content="Galeria de vídeos com trabalhos reais da Auto Evolution em PPF, vitrificação, restauração de faróis, lavagem técnica e estética automotiva premium em Curitiba." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,149 +51,38 @@
       <span class="eyebrow">Trabalhos selecionados</span>
       <h1>Projetos<br>em <span class="stroke">destaque</span></h1>
       <p>
-        Uma seleção dos veículos que passaram pela nossa oficina nos últimos anos.
-        Cada projeto entrega proteção, brilho e durabilidade no padrão Auto Evolution.
+        Uma seleção dos vídeos que mostram a rotina da oficina — clique em qualquer
+        card para assistir, ou siga o Instagram para acompanhar os trabalhos recentes.
       </p>
     </div>
   </section>
 
-  <!-- ===================== PORTFÓLIO ===================== -->
-  <section class="portfolio">
+  <!-- ===================== GALERIA DE VÍDEOS (3 x 2) ===================== -->
+  <section class="video-section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Galeria</span>
-        <h2>Veículos <span class="accent">transformados</span></h2>
-        <p>Filtre pelos serviços e explore os projetos.</p>
+        <span class="eyebrow">Galeria de vídeos</span>
+        <h2>Trabalhos <span class="accent">em movimento</span></h2>
+        <p>Bastidores reais da oficina — clique no botão de play para assistir cada vídeo direto na página.</p>
       </div>
 
-      <div class="filter-bar" id="filter-bar">
-        <button class="filter-chip active" data-filter="all">Todos</button>
-        <button class="filter-chip" data-filter="ppf">PPF</button>
-        <button class="filter-chip" data-filter="insulfilm">Insulfilm</button>
-        <button class="filter-chip" data-filter="vitrificacao">Vitrificação</button>
-        <button class="filter-chip" data-filter="blindagem">Blindagem</button>
-        <button class="filter-chip" data-filter="estetica">Estética</button>
+      <div class="video-grid" id="video-grid">
+        <!-- cards inseridos via JS (async) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM ===================== -->
+  <section class="insta-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Redes sociais</span>
+        <h2>Mais no <span class="accent">Instagram</span></h2>
+        <p>Reels recentes da Auto Evolution — clique em qualquer card para abrir o vídeo na íntegra no Instagram.</p>
       </div>
 
-      <div class="portfolio-grid" id="portfolio-grid">
-
-        <article class="proj-card reveal" data-cat="ppf">
-          <div class="proj-img g-1"><span>Porsche 911 GT3</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">PPF · Full Body</span>
-            <h3>Porsche 911 GT3 RS</h3>
-            <p>Aplicação completa de PPF reGen com autorreparo térmico em toda a carroceria, preservando o azul Shark Blue original.</p>
-            <div class="proj-meta">
-              <span>2025</span>
-              <span>21 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="insulfilm">
-          <div class="proj-img g-2"><span>BMW M3 Competition</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Insulfilm Cerâmico</span>
-            <h3>BMW M3 Competition</h3>
-            <p>Aplicação completa de insulfilm cerâmico ZIVENT ZV90 com 71,7% de rejeição solar e garantia de 10 anos.</p>
-            <div class="proj-meta">
-              <span>2025</span>
-              <span>1 dia</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="vitrificacao">
-          <div class="proj-img g-3"><span>Audi RS6 Avant</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Vitrificação 7 anos</span>
-            <h3>Audi RS6 Avant Performance</h3>
-            <p>Vitrificação nano cerâmica Carpro com proteção de 7 anos, brilho profundo e efeito hidrofóbico em toda pintura cinza Nardo.</p>
-            <div class="proj-meta">
-              <span>2024</span>
-              <span>4 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="blindagem">
-          <div class="proj-img g-4"><span>Range Rover Autobiography</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Blindagem III-A</span>
-            <h3>Range Rover Autobiography</h3>
-            <p>Blindagem homologada nível III-A com vidros opticamente perfeitos, mantendo conforto e originalidade do interior.</p>
-            <div class="proj-meta">
-              <span>2024</span>
-              <span>45 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="estetica">
-          <div class="proj-img g-5"><span>Mercedes-AMG GT</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Detalhamento Full</span>
-            <h3>Mercedes-AMG GT 63 S</h3>
-            <p>Polimento técnico, descontaminação clay-bar, higienização completa e revestimento cerâmico de 5 anos.</p>
-            <div class="proj-meta">
-              <span>2024</span>
-              <span>6 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="ppf">
-          <div class="proj-img g-6"><span>Lamborghini Huracán</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">PPF · Frontal</span>
-            <h3>Lamborghini Huracán EVO</h3>
-            <p>Aplicação de PPF em capô, para-choque, retrovisores e colunas A — proteção para o uso intensivo em pista.</p>
-            <div class="proj-meta">
-              <span>2025</span>
-              <span>7 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="insulfilm vitrificacao">
-          <div class="proj-img g-1"><span>Volvo XC90 Recharge</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Combo · Insulfilm + Vitrificação</span>
-            <h3>Volvo XC90 Recharge</h3>
-            <p>Pacote conforto e proteção: insulfilm ZV90 em todos os vidros e vitrificação nano com garantia de 5 anos.</p>
-            <div class="proj-meta">
-              <span>2025</span>
-              <span>3 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="estetica">
-          <div class="proj-img g-3"><span>Toyota Hilux GR-Sport</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">Restauração de Couro</span>
-            <h3>Toyota Hilux GR-Sport</h3>
-            <p>Restauração e pintura do couro dos bancos com ajuste de cor em laboratório, hidratação e impermeabilização final.</p>
-            <div class="proj-meta">
-              <span>2024</span>
-              <span>5 dias</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" data-cat="ppf vitrificacao">
-          <div class="proj-img g-2"><span>Tesla Model S Plaid</span></div>
-          <div class="proj-body">
-            <span class="proj-tag">PPF + Vitrificação</span>
-            <h3>Tesla Model S Plaid</h3>
-            <p>PPF transparente em capô, para-choques e colunas, com vitrificação nano cerâmica em toda a pintura preta perolizada.</p>
-            <div class="proj-meta">
-              <span>2025</span>
-              <span>10 dias</span>
-            </div>
-          </div>
-        </article>
-
+      <div class="insta-grid" id="insta-grid">
+        <!-- cards inseridos via JS (async) -->
       </div>
 
       <!-- CTA -->
@@ -245,45 +134,7 @@
   </footer>
 
   <script src="js/dna-bg.js"></script>
-  <script>
-    (function () {
-      /* Menu mobile */
-      const toggle = document.getElementById("nav-toggle");
-      const links = document.getElementById("nav-links");
-      if (toggle && links) {
-        toggle.addEventListener("click", () => links.classList.toggle("open"));
-        links.addEventListener("click", (e) => {
-          if (e.target.closest("a")) links.classList.remove("open");
-        });
-      }
-
-      /* Filtro do portfólio */
-      const bar = document.getElementById("filter-bar");
-      const cards = document.querySelectorAll("#portfolio-grid .proj-card");
-      bar.addEventListener("click", (e) => {
-        const btn = e.target.closest(".filter-chip");
-        if (!btn) return;
-        bar.querySelectorAll(".filter-chip").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const f = btn.dataset.filter;
-        cards.forEach((c) => {
-          const cat = c.dataset.cat || "";
-          const match = f === "all" || cat.split(/\s+/).includes(f);
-          c.classList.toggle("hide", !match);
-        });
-      });
-
-      /* Reveal */
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((e, i) => {
-          if (e.isIntersecting) {
-            setTimeout(() => e.target.classList.add("in"), (i % 4) * 90);
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-    })();
-  </script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
 </html>

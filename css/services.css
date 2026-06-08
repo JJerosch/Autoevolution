@@ -1412,3 +1412,187 @@ img { max-width: 100%; display: block; }
   .lemma-band { padding: 50px 24px; }
   .lemma-band::before { font-size: 9rem; top: -28px; left: 10px; }
 }
+
+/* ============================================================
+   PORTFÓLIO — GRID DE VÍDEOS + CARDS DE INSTAGRAM
+   ============================================================ */
+
+.video-section,
+.insta-section { position: relative; z-index: 1; }
+
+/* -------- grid de vídeos (3 x 2) -------- */
+.video-section { padding: 30px 0 30px; }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.video-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), border-color 0.35s;
+}
+.video-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,99,0,0.4);
+}
+.video-label {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  padding: 16px 20px 22px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.98rem;
+  color: var(--white);
+  background: linear-gradient(180deg, rgba(13,13,15,0.85) 0%, rgba(13,13,15,0.45) 70%, transparent 100%);
+  pointer-events: none;
+}
+.video-frame {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  overflow: hidden;
+}
+.video-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: var(--orange);
+  color: #140a00;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 6px rgba(255,99,0,0.18);
+  transition: transform 0.25s var(--ease), background 0.2s, opacity 0.25s;
+  z-index: 2;
+}
+.video-play svg { width: 28px; height: 28px; margin-left: 3px; }
+.video-play:hover { background: var(--orange-bright); transform: scale(1.06); }
+.video-card.playing .video-play { opacity: 0; pointer-events: none; }
+.video-card.playing .video-label {
+  background: linear-gradient(180deg, rgba(13,13,15,0.7) 0%, transparent 100%);
+}
+
+/* skeleton específico do vídeo */
+.sk-video {
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-lg);
+}
+
+/* -------- cards do Instagram -------- */
+.insta-section { padding: 60px 0 30px; }
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.insta-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s, transform 0.3s var(--ease), background 0.3s;
+  position: relative;
+  overflow: hidden;
+  color: inherit;
+}
+.insta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% -10%, var(--orange-glow), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  pointer-events: none;
+}
+.insta-card:hover {
+  border-color: rgba(255,99,0,0.4);
+  transform: translateY(-5px);
+}
+.insta-card:hover::before { opacity: 1; }
+
+.insta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.insta-date {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+.insta-icon {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  background: rgba(255,99,0,0.1);
+  border: 1px solid rgba(255,99,0,0.25);
+  color: var(--orange);
+  display: grid;
+  place-items: center;
+}
+.insta-icon svg { width: 16px; height: 16px; }
+.insta-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+}
+.insta-card p {
+  color: var(--grey);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  flex: 1;
+}
+.insta-cta {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--orange);
+  transition: gap 0.25s var(--ease);
+}
+.insta-cta svg { width: 16px; height: 16px; }
+.insta-card:hover .insta-cta { gap: 14px; }
+
+.sk-insta { height: 220px; }
+
+/* -------- responsivo -------- */
+@media (max-width: 940px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .video-grid { grid-template-columns: 1fr; }
+  .insta-grid { grid-template-columns: 1fr; }
+  .video-play { width: 56px; height: 56px; }
+  .video-play svg { width: 24px; height: 24px; }
+}
